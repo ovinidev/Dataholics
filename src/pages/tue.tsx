@@ -5,21 +5,21 @@ import ReactPlayer from 'react-player';
 
 export default function Home() {
 	const axiosInstance = axios.create({
-		baseURL: 'http://localhost:3333',
+		baseURL: 'api',
 	});
 
 	const [count, setCount] = useState(0);
 
 	useEffect(() => {
 		(async () => {
-			const { data } = await axiosInstance.get('/counters');
+			const { data } = await axiosInstance.get('/counter');
 
 			setCount(data);
 		})();
 	}, []);
 
 	const handleCounter = async () => {
-		const { data } = await axiosInstance.put('/counters');
+		const { data } = await axiosInstance.put('/counter');
 		setCount(data);
 	};
 

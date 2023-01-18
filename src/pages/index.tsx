@@ -31,6 +31,18 @@ const images = [
 		name: 'Vinicius Medeiros',
 		department: 'development',
 	},
+	{
+		id: '4',
+		src: '/vinidev.png',
+		name: 'Vinicius Medeiros',
+		department: 'development',
+	},
+	{
+		id: '4',
+		src: '/vinidev.png',
+		name: 'Vinicius Medeiros',
+		department: 'development',
+	},
 ];
 
 export default function Page() {
