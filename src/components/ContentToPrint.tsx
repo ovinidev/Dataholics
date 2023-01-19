@@ -1,37 +1,17 @@
-import { Flex, Image } from '@chakra-ui/react';
-import { forwardRef, ForwardRefRenderFunction } from 'react';
-import { AvatarGrid } from '../components/AvatarGrid';
-import { Dataholic } from '../components/Dataholic';
-import React from 'react';
+import { Flex } from '@chakra-ui/react';
+import { forwardRef, ForwardRefRenderFunction, ReactNode } from 'react';
 
 interface ComponentToPrintProps {
-	images: {
-		id: string;
-		src: string;
-		name: string;
-		department: string;
-	}[];
+	children: ReactNode;
 }
 
 export const ComponentToPrint: ForwardRefRenderFunction<
 	HTMLDivElement,
 	ComponentToPrintProps
-> = ({ images }, ref: any) => {
+> = ({ children }, ref: any) => {
 	return (
 		<Flex position="relative" align="center" justify="center" ref={ref}>
-			<Image src="/wp.png" alt="wp" h={650} />
-			<AvatarGrid>
-				{images.map((image) => {
-					return (
-						<Dataholic
-							key={image.id}
-							image={image.src}
-							department={image.department}
-							name={image.name}
-						/>
-					);
-				})}
-			</AvatarGrid>
+			{children}
 		</Flex>
 	);
 };

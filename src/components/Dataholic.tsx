@@ -8,7 +8,15 @@ interface DataholicProps {
 
 export const Dataholic = ({ image, department, name }: DataholicProps) => {
 	return (
-		<Flex direction="column" align="center">
+		<Flex
+			direction="column"
+			align="center"
+			css={{
+				'&:nth-child(4)': {
+					alignSelf: 'center',
+				},
+			}}
+		>
 			<Avatar src={image} h={200} w={200} />
 			<Text fontSize="1.2rem">{name}</Text>
 			<Text fontSize="1.2rem">{department}</Text>
