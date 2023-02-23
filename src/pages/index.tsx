@@ -49,7 +49,7 @@ export default function Page() {
 	return (
 		<Flex h="100vh" align="center" justify="center" direction="column">
 			<ContentToPrint ref={componentRef}>
-				<Image src="/wp.png" alt="wp" h={650} />
+				<Image src="/wp.png" alt="wp" h={750} />
 				<Stack spacing="4" position="absolute" direction="column">
 					<Flex gap="4" align="center" justify="center">
 						{images.slice(0, 3).map((image) => {
@@ -64,7 +64,7 @@ export default function Page() {
 						})}
 					</Flex>
 					<Flex gap="4" align="center" justify="center">
-						{images.slice(3, 6).map((image) => {
+						{images.slice(3, images.length).map((image) => {
 							return (
 								<Dataholic
 									key={image.id}
